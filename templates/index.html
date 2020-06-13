@@ -1,0 +1,114 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style>
+body {
+     background: url('https://static-communitytable.parade.com/wp-content/uploads/2014/03/rethink-target-heart-rate-number-ftr.jpg') fixed;
+    background-size: cover;
+}
+
+*[role="form"] {
+    max-width: 735px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
+}
+
+*[role="form"] h2 { 
+    font-family: 'Open Sans' , sans-serif;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+
+  .form-horizontal {
+    margin-top:40%;
+  }
+  @media only screen and (min-width: 992px) {
+  .form-horizontal {
+    margin-top:0%!important;
+  }
+  }
+
+</style>
+
+<div class="container">
+            <form class="form-horizontal" role="form" action="{{ url_for('predict')}}" method="post">
+                <h2><u>Breast Cancer Prediction</u></h2>
+                 <p style="text-align:center;">{{prediction_text}}</p>
+                <div class="form-group">
+                    <label for="clump_thickness" class="col-sm-3 control-label">Clump Thickness *</label>
+                    <div class="col-sm-9">
+                        <input type="number"  min="1" max="10" name="clump_thickness" id="clump_thickness"  class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="unif_cell_size" class="col-sm-3 control-label">Unif Cell Size *</label>
+                    <div class="col-sm-9">
+                        <input type="number"  min="1" max="10" name="unif_cell_size" id="unif_cell_size"  class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="unif_cell_shape" class="col-sm-3 control-label">Unif Cell Shape *</label>
+                    <div class="col-sm-9">
+                        <input type="number"  min="1" max="10" id="unif_cell_shape"  class="form-control" name= "unif_cell_shape" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="marge_adhesion" class="col-sm-3 control-label">Marge Adhesion *</label>
+                    <div class="col-sm-9">
+                        <input type="number"  min="1" max="10" id="marge_adhesion" name="marge_adhesion"  class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="single_epith_cell_size" class="col-sm-3 control-label">Single Epith Cell Size *</label>
+                    <div class="col-sm-9">
+                        <input type="number"  min="1" max="10" id="single_epith_cell_size" name="single_epith_cell_size" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bare_nuclei" class="col-sm-3 control-label">Bare Nuclei *</label>
+                    <div class="col-sm-9">
+                        <input type="number"  min="1" max="10" id="bare_nuclei" name="bare_nuclei" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bland_chrom" class="col-sm-3 control-label">Bland Chrom *</label>
+                    <div class="col-sm-9">
+                        <input type="bland_chrom"  min="1" max="10" id="bland_chrom" name="bland_chrom" class="form-control" required>
+                      
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label for="norm_nucleoli" class="col-sm-3 control-label">Norm Nucleoli *</label>
+                    <div class="col-sm-9">
+                        <input type="number"  min="1" max="10" id="norm_nucleoli" name="norm_nucleoli" class="form-control" required>
+                    </div>
+                </div>
+                 <div class="form-group">
+                        <label for="mitoses" class="col-sm-3 control-label">Mitoses *</label>
+                    <div class="col-sm-9">
+                        <input type="number"  min="1" max="10" id="mitoses" name="mitoses" class="form-control" required>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <span class="help-block">*Required fields</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Predict</button>
+            </form> <!-- /form -->
+           
+        </div> <!-- ./container -->
